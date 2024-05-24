@@ -7,16 +7,25 @@
     <title>Homework 11</title>
     
     <script type="module" crossorigin src="/goit-js-hw-11/commonHelpers.js"></script>
-    <link rel="stylesheet" href="/goit-js-hw-11/assets/index-2d60abf3.css">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-0fc460d7.js">
+    <link rel="stylesheet" href="/goit-js-hw-11/assets/vendor-4b066c51.css">
+    <link rel="stylesheet" href="/goit-js-hw-11/assets/index-3a7acbe6.css">
   </head>
   <body>
 
-    <form class="search-form">
-      <input type="text" id="search-input" placeholder="Пошук зображень..." required>
-      <button type="submit">Пошук</button>
-    </form>
-    <div id="gallery"></div>
+    <div class="search-container">
+      <form id="search-form">
+        <input type="text" id="search-input" placeholder="Search images...">
+        <button type="submit" id="search-button">Search</button>
+      </form>
+    </div>
     
-  
+    <div class="loader" id="loader" style="display: none;"></div>
+
+    <div class="gallery" id="gallery">
+      <!-- <a href="images/image1.jpg"><img src="images/thumbs/thumb1.jpg" alt="" title=""/></a>
+      <a href="images/image2.jpg"><img src="images/thumbs/thumb2.jpg" alt="" title="Beautiful Image"/></a> -->
+    </div>
+    
   </body>
 </html>
