@@ -1,13 +1,3 @@
-// export const renderImages = (images) => {
-//     const gallery = document.getElementById('gallery');
-//     gallery.innerHTML = images.hits.map(hit => 
-//       `<div class="image-card">
-//         <img src="${hit.webformatURL}" alt="${hit.tags}">
-//         <p>Likes: ${hit.likes}</p>
-//       </div>`
-//     ).join('');
-//   };
-
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 import iziToast from "izitoast";
@@ -26,7 +16,13 @@ export function renderImages(images) {
   images.forEach(image => {
     const imgElement = document.createElement('a');
     imgElement.href = image.largeImageURL;
-    imgElement.innerHTML = `<img src="${image.webformatURL}" alt="${image.tags}" title="${image.tags}"/>`;
+    imgElement.innerHTML = `<img src="${image.webformatURL}" alt="${image.tags}" title="${image.tags}"/>
+    <div class="image-stats">
+    <p>Likes: ${image.likes}</p>
+    <p>Views: ${image.views}</p>
+    <p>Comments: ${image.comments}</p>
+    <p>Downloads: ${image.downloads}</p>
+  </div>`;
     gallery.appendChild(imgElement);
   });
   const lightbox = new SimpleLightbox('.gallery a');
@@ -55,4 +51,3 @@ export function showError(message) {
     position: 'topRight'
   });
 }
-  
